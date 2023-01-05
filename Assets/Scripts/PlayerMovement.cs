@@ -6,16 +6,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     private float move;
-    private Rigidbody2D playerBody;
+    private Rigidbody2D body;
 
     void Start()
     {
-        playerBody = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         move = Input.GetAxis("Horizontal");
-        playerBody.velocity = new Vector2(speed * move, playerBody.velocity.y);
+        body.velocity = new Vector2(speed * move, body.velocity.y);
     }
 }
