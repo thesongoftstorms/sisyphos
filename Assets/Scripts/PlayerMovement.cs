@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
-    private float move;
-    private Rigidbody2D body;
+  public float speed;
+  private float move;
+  private Rigidbody2D body;
 
-    void Start()
-    {
-        body = GetComponent<Rigidbody2D>();
-    }
+  void Start() {
+    body = GetComponent<Rigidbody2D>();
+  }
 
-    void Update()
-    {
-        move = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(speed * move, body.velocity.y);
-    }
+  void Update() {
+    if(StartMenu.isPaused) return;
+
+    move = Input.GetAxis("Horizontal");
+    body.velocity = new Vector2(speed * move, body.velocity.y);
+  }
 }
