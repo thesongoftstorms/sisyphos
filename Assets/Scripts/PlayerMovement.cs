@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playermovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
   public float speed;
   private float move;
@@ -25,8 +25,5 @@ public class playermovement : MonoBehaviour
 
     move = Input.GetAxis("Horizontal");
     body.velocity = new Vector2(speed * move, body.velocity.y);
-    }
-
-    
-     
+    } 
 }
