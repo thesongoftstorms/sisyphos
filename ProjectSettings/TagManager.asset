@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stone
-  - StartMenu
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -13,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - Stone
+  - Enemy
+  - 
   - 
   - 
   - 
