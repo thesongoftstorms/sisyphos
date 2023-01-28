@@ -14,14 +14,16 @@ public class ChangeSize : MonoBehaviour
   private float currentSize;
   private float topSize;
   private float upWardOrDownWard = 0;
-  private bool topUnset = true;
+  private float origMass;
   
   void Start() {
     body = GetComponent<Rigidbody2D>();
     origSizeX = transform.localScale.x;
     origSizeZ = transform.localScale.z;
+    origMass = body.mass;
     topSize = origSizeX + (float)((turningPoint-footOfHill)*growthFactor*growDirection); 
     currentSize = origSizeX;
+
   }
 
   private bool isBehindTurningPoint() {
@@ -49,6 +51,14 @@ public class ChangeSize : MonoBehaviour
   }
 
   void Update() {
+    this.body.mass = origMass;
+    
+    if (this.isInSlope()) {
+        float newMass = (float)(Mathf.Exp(this.body.mass * this.body.position.x) * this.growDirection);
+        newMass = Mathf.Clamp(newMass, -origMass*4, (float)(origMass*2.05));
+        this.body.mass += newMass;
+    }
+    
     if (this.isBehindTurningPoint()) {
       this.upWardOrDownWard = -1;
     }
@@ -59,7 +69,6 @@ public class ChangeSize : MonoBehaviour
     
     if (this.rollsDown() && this.isInSlope() && !this.isBehindTurningPoint()) {
         this.currentSize = this.topSize - (float)((this.turningPoint - this.body.position.x)*this.growthFactor*this.growDirection);
-        print(this.currentSize);
     }
     if (this.returnedAfterRoll()) {
         this.upWardOrDownWard = 0;
