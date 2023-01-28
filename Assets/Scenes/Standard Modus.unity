@@ -136,7 +136,8 @@ GameObject:
   - component: {fileID: 284832490}
   - component: {fileID: 284832491}
   - component: {fileID: 284832494}
-  m_Layer: 0
+  - component: {fileID: 284832495}
+  m_Layer: 6
   m_Name: fels
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -261,8 +262,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turningPoint: 5
   turningAreaSize: 5
-  footOfHill: -3
+  footOfHill: -1
   menuTreshold: 0
+--- !u!114 &284832495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284832489}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe3fc26316441249b4280ab82bd55de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +486,7 @@ GameObject:
   - component: {fileID: 1033677155}
   - component: {fileID: 1033677157}
   - component: {fileID: 1033677158}
+  - component: {fileID: 1033677159}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -653,7 +668,7 @@ Animator:
   m_GameObject: {fileID: 1033677151}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: de4fd689960a2bd48ae49f34117a5f1d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5521ba705ce88e7428bca9a49fad00aa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -663,6 +678,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1033677159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033677151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bf968bc769a240396fcdc9dc7510b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turningPoint: 5
+  turningAreaSize: 5
+  footOfHill: 0
+  menuTreshold: 0
+  attackPos: {fileID: 1033677154}
+  enemies:
+    serializedVersion: 2
+    m_Bits: 64
+  attackrange: 1
 --- !u!1 &1310530911
 GameObject:
   m_ObjectHideFlags: 0
