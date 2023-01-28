@@ -5,13 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Neues Level.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Standard Modus.unity
     guid: e8778cc3ab7037643be091a235e5da7f
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: ed5ffd23a059ef043ade676e651b4e52
+  - enabled: 1
+    path: Assets/Scenes/Accept.unity
+    guid: 98f467c25ffe3f25fa30826afa04064c
+  - enabled: 1
+    path: Assets/Scenes/Dont Care.unity
+    guid: 5eea1be083d4ec6f2846c6e0ba22aec1
+  - enabled: 1
+    path: Assets/Scenes/Dont Want.unity
+    guid: d6a2332e7e74ff6a78902b4363fe3a20
+  - enabled: 1
+    path: Assets/Scenes/Happy.unity
+    guid: a6caa14cd9bb9138da3bc9f7a47964a4
+  - enabled: 1
+    path: Assets/Scenes/Sad.unity
+    guid: 49b1e2b5f3685a51db8583f87527ab1f
   m_configObjects: {}

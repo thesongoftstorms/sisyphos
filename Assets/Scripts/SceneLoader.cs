@@ -7,7 +7,6 @@ public class SceneLoader : MonoBehaviour
 {
     public string tagToCheck;
     public string sceneName;
-
     public void LoadMyScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -21,6 +20,4 @@ public class SceneLoader : MonoBehaviour
             LoadMyScene(sceneName);
         }
     }
-
-
 }
