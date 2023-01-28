@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Attack : MonoBehaviour
 {
@@ -8,8 +9,21 @@ public class Attack : MonoBehaviour
     public LayerMask enemies;
     public float attackrange;
     public int damage;
+    public int timeout;
 
+    private IEnumerator LoadMenu() {
+      if (this.timeout == 0) {
+          this.timeout = 5;
+      }
+      yield return new WaitForSeconds(this.timeout);
+      SceneManager.LoadScene("Main Menu");
+    }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackrange); 
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +41,7 @@ public class Attack : MonoBehaviour
             {
                 enemiesToDamage[i].GetComponent<Enemy>().health -= damage;
             }
+            StartCoroutine(LoadMenu());
          }
-     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackrange); 
-    }
-      
-
-       
-       
+     } 
 }
