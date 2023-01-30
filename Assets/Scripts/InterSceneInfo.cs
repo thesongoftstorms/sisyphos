@@ -14,7 +14,7 @@ public class InterSceneInfo : MonoBehaviour {
     }
     // end of new code
         Instance = this;
-        healthBar = 5;
+        healthBar = 100;
         DontDestroyOnLoad(gameObject);
     }
 }
